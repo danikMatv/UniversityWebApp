@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title>Details</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            display: inline;
+            margin-right: 10px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+<h1>Details</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Group</th>
+        <th>Day</th>
+        <th>Lessons</th>
+        <th>Teacher Name</th>
+        <th>Teacher Surname</th>
+    </tr>
+    </thead>
+    <tr th:each="timetable : ${timetables}">
+        <td th:text ="${timetable.getGroupId().getGroupName()}"></td>
+        <td th:text="${timetable.getDay()}"></td>
+        <td th:text ="${timetable.getTeachingId().getTeachingName()}"></td>
+        <td th:text="${timetable.getTeacherId().getTeacherFirstName()}"></td>
+        <td th:text="${timetable.getTeacherId().getTeacherLastName()}"></td>
+    </tr>
+</table>
+</body>
+</html>

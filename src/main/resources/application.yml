@@ -1,0 +1,23 @@
+#spring.flyway.baselineOnMigrate=true
+server:
+  port: 8081
+
+spring:
+  thymeleaf.cache: false
+  thymeleaf.enabled: true
+  thymeleaf.prefix: classpath:/templates/
+  thymeleaf.suffix: .html
+  application:
+    name: Bootstrap Spring Boot
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/universitywepapp
+    username: postgres
+    password: 123

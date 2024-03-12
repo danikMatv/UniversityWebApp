@@ -1,0 +1,12 @@
+<html>
+<head>
+    <title>Student Details</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1>Student Details</h1>
+<p th:text ="'Group: ' + ${student.getGroupId()}"></p>
+<p th:text="'Name: ' + ${student.getStudentFirstName()}"></p>
+<p th:text="'Surname: ' + ${student.getStudentLastName()}"></p>
+</body>
+</html>

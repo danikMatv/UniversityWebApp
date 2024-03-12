@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title>Course list</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            display: inline;
+            margin-right: 10px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+<h1></h1>
+<table>
+    <thead>
+    <tr>
+        <th>Group Id</th>
+        <th>Group Name</th>
+    </tr>
+    </thead>
+    <tr th:each="group : ${groups}">
+        <td th:text ="${group.getGroupId()}"></td>
+        <td th:text="${group.getGroupName()}"></td>
+    </tr>
+</table>
+<ul><li><a th:href ="@{/group/addGroup}">Add Group</a> </li></ul>
+</body>
+</html>

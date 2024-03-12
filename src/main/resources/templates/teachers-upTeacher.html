@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Teacher</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Add Teacher</h2>
+    <form th:action="@{/teachers/upTeacher}" method="post">
+        <label for="oldFirstName">Old Name:</label>
+        <input type="text" id="oldFirstName" name="oldFirstName" required>
+        <label for="oldLastName">Old Last Name:</label>
+        <input type="text" id="oldLastName" name="oldLastName" required>
+        <label for="newFirstName">New First Name:</label>
+        <input type="text" id="newFirstName" name="newFirstName" required>
+        <label for="newLastName">New Last Name:</label>
+        <input type="text" id="newLastName" name="newLastName" required>
+        <button type="submit">Add Teacher</button>
+    </form>
+</div>
+</body>
+</html>
